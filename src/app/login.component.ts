@@ -31,9 +31,7 @@ export class LoginComponent {
   save(username,password) {
   	this.username=username;
   	this.password-password;
-  	console.log(this.username);
-  	console.log(this.password);
-    this._service.setDirective(2);
+  	this._service.setDirective(2);
     this._loginservice.login(this.username, this.password);
   }
 }
