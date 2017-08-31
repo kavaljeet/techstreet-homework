@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularService } from '../angular/service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
-
 @Component({
   selector: 'login-component',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -23,7 +22,6 @@ export class LoginComponent {
       password: ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.required, Validators.maxLength(30)])]
     });
   }
-
   ngOnInit() {
     this.loggedIn = localStorage.getItem('currentUser');
     this._service.setDirective(1);
