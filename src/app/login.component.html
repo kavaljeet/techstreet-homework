@@ -1,12 +1,14 @@
 <h2>Login</h2>
+<!-- Login Form Start -->
 <form [formGroup]="loginForm">
-<div style="width:15%; float: left">
+<div style="width: 15%; float: left">
   <input placeholder="Login" [(ngModel)]="username" formControlName="username" name="username" required pattern="[a-zA-Z][a-zA-Z ]+" />
   <div *ngIf="loginForm.hasError('required','username')"  style="color:red">* Username is required</div>
   <div *ngIf="loginForm.hasError('minlength','username')"  style="color:red">* Minimum length is 6!</div>
   <div *ngIf="loginForm.hasError('maxlength','username')"  style="color:red">* Maximum length is 30!</div>
 </div>
-<div style="width:15%; float: left">
+
+<div style="width: 15%; float: left">
   <input placeholder="Password" type="password" [(ngModel)]="password" formControlName="password" name="password" required />
   <div *ngIf="loginForm.hasError('required','password')"  style="color:red">* Password is required</div>
   <div *ngIf="loginForm.hasError('minlength','password')"  style="color:red">* Minimum length is 6!</div>
@@ -14,3 +16,4 @@
 </div>
  <button type="Submit" (click)="save(username,password)" primary [disabled]="!loginForm.valid">Submit</button>
 </form>
+<!-- Login Form End -->
